@@ -41,7 +41,7 @@ This section reflects the active configuration of this repository across feature
 
 ---
 
-## 2. Repository Ruleset Configuration
+### 2. Repository Ruleset Configuration
 *Configured under: Settings -> Repository Rulesets*
 
 ### Ruleset Metadata & Targets
