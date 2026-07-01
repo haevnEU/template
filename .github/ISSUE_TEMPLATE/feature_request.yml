@@ -1,0 +1,57 @@
+name: "🚀 Feature Request"
+description: Suggest an idea or a new feature for this project
+title: "[Feature]: "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for suggesting a new idea! Please fill out this form to help us understand the value and scope of the requested feature.
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: "Is your feature request related to a problem?"
+      description: "A clear and concise description of what the problem or limitation is."
+      placeholder: "e.g., I'm always frustrated when I have to manually copy..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: "Describe the solution you'd like"
+      description: "A clear and concise description of what you want to happen and how the feature should behave."
+      placeholder: "Provide a high-level overview of your ideal solution..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: "Describe alternatives you've considered"
+      description: "A clear and concise description of any alternative solutions or workarounds you've tried or thought of."
+      placeholder: "e.g., Using a script, manual mapping, or another tool..."
+    validations:
+      required: false
+
+  - type: dropdown
+    id: impact
+    attributes:
+      label: "Project Context / Scope"
+      description: "Where does this feature primary apply?"
+      options:
+        - "Hobby & Personal Productivity"
+        - "Core Architecture & Infrastructure"
+
+        - "CI/CD & Automation"
+    validations:
+      required: true
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: "Additional Context"
+      description: "Any other context, mockups, architectural ideas, or screenshots related to the feature request."
+    validations:
+      required: false
