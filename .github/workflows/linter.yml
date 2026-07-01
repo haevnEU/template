@@ -18,12 +18,19 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v4
         with:
-          # Super-Linter needs full history to fetch differences
-          fetch-depth: 0
+          fetch-depth: 0 # Holt die gesamte Historie für den Diff
+
+      - name: Get Default Branch
+        id: default-branch
+        run: |
+          # Ermittelt dynamisch, ob das Repo 'main' oder 'master' als Default nutzt
+          DEFAULT_BR=$(git rev-parse --abbrev-ref origin/HEAD | sed 's/origin\///')
+          echo "RESOLVED_BRANCH=${DEFAULT_BR:-main}" >> $GITHUB_OUTPUT
 
       - name: Lint Code Base
         uses: super-linter/super-linter@v7
         env:
           VALIDATE_ALL_CODEBASE: false
-          DEFAULT_BRANCH: main
+          # Nutzt das Ergebnis aus dem vorherigen Schritt dynamisch
+          DEFAULT_BRANCH: ${{ steps.default-branch.outputs.RESOLVED_BRANCH }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
