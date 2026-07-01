@@ -28,7 +28,7 @@ jobs:
           echo "RESOLVED_BRANCH=${DEFAULT_BR:-main}" >> $GITHUB_OUTPUT
 
       - name: Lint Code Base
-        uses: super-linter/super-linter@v7
+        uses: super-linter/super-linter@v8
         env:
           VALIDATE_ALL_CODEBASE: false
           # Nutzt das Ergebnis aus dem vorherigen Schritt dynamisch
