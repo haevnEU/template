@@ -1,0 +1,30 @@
+name: Setup Repository Labels
+
+on:
+  create:
+
+permissions:
+  issues: write
+  pull-requests: write
+
+jobs:
+  setup-labels:
+    if: github.event.repository.fork == false
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Create Custom Labels
+        uses: ScribeMD/github-labels-action@v2
+        with:
+          labels: |
+            [
+              {"name": "architecture", "color": "d4c5f9", "description": "Structural or architectural modifications"},
+              {"name": "bug", "color": "d73a4a", "description": "Something isn't working"},
+              {"name": "ci/cd", "color": "0052cc", "description": "Pipeline, workflows or automation updates"},
+              {"name": "dependencies", "color": "0366d6", "description": "Dependency updates (Dependabot)"},
+              {"name": "enhancement", "color": "a2eeef", "description": "New feature or request"},
+              {"name": "security", "color": "e11d21", "description": "Security vulnerabilities or patches"},
+              {"name": "testing", "color": "006b75", "description": "Test suites, test setups or code coverage"}
+            ]
