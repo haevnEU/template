@@ -8,7 +8,7 @@ Welcome to your project repository template! This file documents the baseline re
 
 ## 🛠️ Current GitHub Repository Settings
 
-This section reflects the active configuration of this repository across features, branch rulesets, and automated security scanning.
+This section describes the intended baseline configuration for this repository template (verify and adjust these settings in GitHub as needed for your project).
 
 ### 1. General Settings (Features & Pull Requests)
 *Configured under: Settings -> General*
@@ -48,7 +48,7 @@ This section reflects the active configuration of this repository across feature
 *   **Ruleset Name:** `main/master`
 *   **Enforcement Status:** `Active`
 *   **Bypass List:** `Empty` (Enforces these rules strictly for everyone, including repository owners/admins).
-*   **Target Branches:** Target criteria configured to match both `main` and `master` branches.
+*   **Target Branches:** Target criteria are configured to match both `main` and `master` branches.
 
 ### Branch Rules
 *   [ ] **Restrict creations** – Inactive.
@@ -74,7 +74,7 @@ This section reflects the active configuration of this repository across feature
 
 ---
 
-## 3. Advanced Security & Dependabot
+### 3. Advanced Security & Dependabot
 *Configured under: Settings -> Code security and analysis*
 
 ### Dependabot Status
@@ -83,7 +83,7 @@ This section reflects the active configuration of this repository across feature
 *   [ ] **Dependabot malware alerts** – Inactive (Recommended: Click *Enable* to receive alerts when malware is detected in third-party packages).
 *   [x] **Dependabot security updates** – Active (Automatically opens Pull Requests to patch critical CVEs immediately).
 *   [ ] **Grouped security updates** – Inactive (Recommended: Click *Enable* to combine multiple security patches into a single, clean Pull Request).
-*   [ ] **Dependabot version updates** – Handled via Code (Left as "Enable" on the UI, but customized via the `.github/dependabot.yml` configuration file).
+*   [ ] **Dependabot version updates** – Inactive (Enable by adding a `.github/dependabot.yml` configuration file and turning on version updates in **Settings -> Code security and analysis**).
 
 ### Dependabot Rules Presets (0 Rules Enabled)
 *   [ ] **Dismiss low-impact alerts for development-scoped dependencies** – Disabled (Ensures all vulnerability alerts, including test and development dependencies, are visible and tracked).
